@@ -24,8 +24,8 @@
     Plugin.prototype = {
         init: function () {
             this.$element = $(this.element);
-            this.$tabs = this.$element.find('> ul a');
-            this.$contents = this.$element.find('> :not(ul)').hide();
+            this.$tabs = this.$element.find('.tab-index a');
+            this.$contents = this.$element.find('.tab-content').hide();
 
             var that = this;
 
