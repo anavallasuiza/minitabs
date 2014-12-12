@@ -1,8 +1,12 @@
 # minitabs
 
-Requirejs compatible.
+## Install
 
-## Default HTML structure
+Use the code from this repo or: ```bower install minitabs```. This plugin is requirejs compatible.
+
+## Usage:
+
+### Default HTML structure
 
 (you can use your html structure as well, see below **Custom elements**)
 
@@ -22,8 +26,6 @@ Requirejs compatible.
         </section>
     </div>
 ```
-
-## Usage:
 
 ### Init
 
