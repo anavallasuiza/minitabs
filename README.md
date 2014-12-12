@@ -1,4 +1,4 @@
-# jQuery.tabs
+# simpletabs
 
 Requirejs compatible.
 
