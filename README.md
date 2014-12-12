@@ -66,3 +66,7 @@ $('#contido2').on('hide.tabs', function () {
     alert('This is triggered when #content2 tab is hidden');
 });
 ```
+
+### Setting the default tab
+
+Just add the ```.active``` class to the tab index that you want to show by default.
