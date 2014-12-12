@@ -12,7 +12,11 @@
     factory(jQuery);
   }
 }(function ($) {
-    var pluginName = "tabs", defaults = {};
+    var pluginName = "tabs",
+    defaults = {
+        indexSelector: '> ul a',
+        contentSelector: '> section'
+    };
 
     function Plugin (element, options) {
         this.element = element;
@@ -23,9 +27,15 @@
 
     Plugin.prototype = {
         init: function () {
+
             this.$element = $(this.element);
-            this.$tabs = this.$element.find('.tab-index a');
-            this.$contents = this.$element.find('.tab-content').hide();
+
+            this.$tabs = this.$element.find(this.settings.indexSelector);
+            this.$contents = this.$element.find(this.settings.contentSelector).hide();
+
+            if(!this.$tabs.length || !this.$tabs.length) {
+                throw new Error('No tabs indexes or content selected. Check your configuration.');
+            }
 
             var that = this;
 
@@ -35,6 +45,7 @@
                 that.$contents.not(id).hide().trigger('tabHide');
                 that.$contents.filter(id).show().trigger('tabShow');
                 that.$tabs.removeClass('active');
+
                 $this.addClass('active');
 
                 if (!parameters && $.isFunction(window.history.replaceState)) {
