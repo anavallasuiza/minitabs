@@ -1,4 +1,4 @@
-# simpletabs
+# minitabs
 
 Requirejs compatible.
 
