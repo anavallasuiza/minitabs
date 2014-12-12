@@ -1,8 +1,8 @@
 /* global jQuery*/
 
 /**
- * Tabs
- * [version 2.2]
+ * simpletabs
+ * [version 0.1.1]
  */
 
 (function (factory) {
