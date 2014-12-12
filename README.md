@@ -62,7 +62,7 @@ $('#content1').on('show.tabs', function () {
     alert('This is triggered when #content1 tab is shown');
 });
 
-$('#contido2').on('hide.tabs', function () {
+$('#content2').on('hide.tabs', function () {
     alert('This is triggered when #content2 tab is hidden');
 });
 ```
