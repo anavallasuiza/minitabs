@@ -37,15 +37,15 @@ $('.tabs').destroy();
 ### Custom events
 Two custom events are attached to the tabs content elements:
 
-- tabShow
-- tabHide
+- show.tabs
+- hide.tabs
 
 ```js
-$('#content1').on('tabShow', function () {
+$('#content1').on('show.tabs', function () {
     alert('This is triggered when #content1 tab is shown');
 });
 
-$('#contido2').on('tabHide', function () {
+$('#contido2').on('hide.tabs', function () {
     alert('This is triggered when #content2 tab is hidden');
 });
 ```

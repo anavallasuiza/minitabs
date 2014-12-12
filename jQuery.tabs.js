@@ -42,8 +42,8 @@
             this.$tabs.on('click.tabs', function (e, parameters) {
                 var $this = $(this), id = $this.attr('href');
 
-                that.$contents.not(id).hide().trigger('tabHide');
-                that.$contents.filter(id).show().trigger('tabShow');
+                that.$contents.not(id).hide().trigger('hide.tabs');
+                that.$contents.filter(id).show().trigger('show.tabs');
                 that.$tabs.removeClass('active');
 
                 $this.addClass('active');
