@@ -2,21 +2,21 @@
 
 Requirejs compatible.
 
-## Html structure:
+## Default HTML structure, you can adapt your html structure, see below "Custom elements":
 
 ```html
-    <div class="tabs">
-        <ul class="tab-index">
-            <li><a href="#contido1">Contido 1</a></li>
-            <li><a href="#contido2">Contido 2</a></li>
+    <div class="tabs"> <!-- tabs -->
+        <ul class="tab-index"> <!-- tabs index -->
+            <li><a href="#content1">Content 1</a></li>
+            <li><a href="#content2">Content 2</a></li>
         </ul>
 
-        <section class="tab-content" id="contido1">
-            Contido 1
+        <section class="tab-content" id="content1"> <!-- tabs content -->
+            Content 1
         </section>
 
-        <section class="tab-content" id="contido2">
-            Contido 2
+        <section class="tab-content" id="content2"> <!-- tabs content -->
+            Content 2
         </section>
     </div>
 ```
@@ -24,9 +24,20 @@ Requirejs compatible.
 ## Usage:
 
 ### Init
+
+#### Default configuration:
 ```js
 $('.tabs').tabs();
 ```
+
+#### Custom elements:
+```js
+$('.tabs').tabs({
+    indexSelector: '> ul a', // selector for the tabs index
+    contentSelector: '> section' // selector for the tabs content
+});
+```
+this example uses the default configuration.
 
 ### Destroy
 
