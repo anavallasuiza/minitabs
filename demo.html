@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>jQuery tabs demo</title>
+    <title>simpletabs demo</title>
+    <style type="text/css" media="screen">
+        .tab-content {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -33,16 +38,24 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-<script src="jQuery.tabs.js" type="text/javascript"></script>
+<script src="simpletabs.js" type="text/javascript"></script>
 
 <script type="text/javascript">
     /* global $ */
 
-    $('.tabs').tabs({
+    //Cache tabs
+    var $myTabs = $('.tabs');
+
+    //Listen to events
+    $myTabs.find('section').on('show.tabs', function () {
+        $(this).find('h1').css('text-decoration', 'underline');
+    });
+
+    //Init tabs
+    $myTabs.tabs({
         indexSelector: '> .tab-index a',
         contentSelector: '> .tab-content'
     });
-
 </script>
 </body>
 </html>
