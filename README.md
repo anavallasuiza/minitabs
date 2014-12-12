@@ -2,7 +2,9 @@
 
 Requirejs compatible.
 
-## Default HTML structure, you can adapt your html structure, see below "Custom elements":
+## Default HTML structure
+
+(you can use your html structure as well, see below **Custom elements**)
 
 ```html
     <div class="tabs"> <!-- tabs -->
@@ -37,7 +39,7 @@ $('.tabs').tabs({
     contentSelector: '> section' // selector for the tabs content
 });
 ```
-this example uses the default configuration.
+this example uses the actual default configuration, change the selectors to suit your needs.
 
 ### Destroy
 
@@ -46,10 +48,12 @@ $('.tabs').destroy();
 ```
 
 ### Custom events
-Two custom events are attached to the tabs content elements:
+Two custom event listeners are attached to the __tabs content__ elements:
 
 - show.tabs
 - hide.tabs
+
+Events example usage:
 
 ```js
 $('#content1').on('show.tabs', function () {
