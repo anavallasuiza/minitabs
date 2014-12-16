@@ -11,6 +11,14 @@ module.exports = function(grunt) {
         dest: 'build/<%= pkg.name %>.min.js'
       }
     },
+    copy: {
+      main: {
+      expand: true,
+      cwd: 'src/',
+      src: '**',
+      dest: 'build/',
+      },
+    },
     jshint: {
       options: {
         jshintrc: true
@@ -21,7 +29,8 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('build', ['jshint', 'uglify']);
+  grunt.registerTask('build', ['jshint', 'copy', 'uglify']);
 
 };
