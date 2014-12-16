@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-     uglify: {
+    uglify: {
       options: {
         banner: '/*! <%= pkg.name %> version: <%= pkg.version %> (<%= grunt.template.today("dd-mm-yyyy") %>) */\n'
       },
@@ -13,10 +13,10 @@ module.exports = function(grunt) {
     },
     copy: {
       main: {
-      expand: true,
-      cwd: 'src/',
-      src: '**',
-      dest: 'build/',
+        expand: true,
+        cwd: 'src/',
+        src: '**',
+        dest: 'build/',
       }
     },
     jshint: {
