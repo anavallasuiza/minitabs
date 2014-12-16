@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       cwd: 'src/',
       src: '**',
       dest: 'build/',
-      },
+      }
     },
     jshint: {
       options: {
