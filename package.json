@@ -2,7 +2,7 @@
   "name": "minitabs",
   "version": "0.2.0",
   "description": "jQuery super-easy tabs Plugin",
-  "main": "minitabs.js",
+  "main": "build/minitabs.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/MiniPlugins/minitabs.git"
