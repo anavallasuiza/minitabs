@@ -60,12 +60,12 @@ $('.tabs').destroy();
 ```
 
 ### Custom events
-Two custom event listeners are attached to the __tabs content__ elements:
+Two custom event are triggered when the __tabs content__ elements are shown or hidden:
 
 - show.tabs
 - hide.tabs
 
-Events example usage:
+You can attach listeners to that events:
 
 ```js
 $('#content1').on('show.tabs', function () {
@@ -76,6 +76,8 @@ $('#content2').on('hide.tabs', function () {
     alert('This is triggered when #content2 tab is hidden');
 });
 ```
+
+Also, the event __click.tabs__ is triggered when the user clicks on any of the __tab index__ elements.
 
 ### Setting the default tab
 

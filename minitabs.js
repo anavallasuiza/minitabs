@@ -72,7 +72,7 @@
         },
         destroy: function () {
             this.$tabs.off('.tabs');
-            this.$contents.off('tabHide tabShow');
+            this.$contents.off('.tabs');
         }
     };
 

@@ -11,12 +11,12 @@
 <body>
 
 <div class="tabs">
-    <ul class="tab-index">
+    <ul class="my-tab-index">
         <li><a href="#content1">Content 1</a></li>
         <li><a href="#content2">Content 2</a></li>
     </ul>
 
-    <section class="tab-content" id="content1">
+    <section class="my-tab-content" id="content1">
         <h1>Content 1</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -26,7 +26,7 @@
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section>
 
-    <section class="tab-content" id="content2">
+    <section class="my-tab-content" id="content2">
         <h1>Content 2</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -53,8 +53,8 @@
 
     //Init tabs
     $myTabs.tabs({
-        indexSelector: '> .tab-index a',
-        contentSelector: '> .tab-content'
+        indexSelector: '> .my-tab-index a',
+        contentSelector: '> .my-tab-content'
     });
 </script>
 </body>
