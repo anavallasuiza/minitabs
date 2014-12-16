@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       },
       build: {
         src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
+        dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
     copy: {
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'src/',
         src: '**',
-        dest: 'build/',
+        dest: 'dist/',
       }
     },
     jshint: {
