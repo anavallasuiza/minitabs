@@ -43,6 +43,16 @@ $('.tabs').tabs({
 ```
 this example uses the actual default configuration, change the selectors to suit your needs.
 
+### Custom active class:
+By default the class __.tab_active__ is applied to the selected tab index element. But you can configure it when you init the tabs:
+
+```js
+$('.tabs').tabs({
+    // other init options...
+    activeClass: 'my-active-class'
+});
+
+
 ### Destroy
 
 ```js
@@ -69,4 +79,4 @@ $('#content2').on('hide.tabs', function () {
 
 ### Setting the default tab
 
-Just add the ```.active``` class to the tab index that you want to show by default.
+Just add the ```.tab-active``` class (or your custom active class, see avobe) to the tab index that you want to show by default.

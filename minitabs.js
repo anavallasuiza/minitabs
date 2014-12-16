@@ -15,7 +15,8 @@
     var pluginName = "tabs",
     defaults = {
         indexSelector: '> ul a',
-        contentSelector: '> section'
+        contentSelector: '> section',
+        activeClass: 'tab-active'
     };
 
     function Plugin (element, options) {
@@ -44,9 +45,9 @@
 
                 that.$contents.not(id).hide().trigger('hide.tabs');
                 that.$contents.filter(id).show().trigger('show.tabs');
-                that.$tabs.removeClass('active');
+                that.$tabs.removeClass(that.settings.activeClass);
 
-                $this.addClass('active');
+                $this.addClass(that.settings.activeClass);
 
                 if (!parameters && $.isFunction(window.history.replaceState)) {
                     window.history.replaceState(null, null, id);
@@ -55,7 +56,7 @@
                 e.preventDefault();
             });
 
-            var $tab = this.$tabs.filter('.active');
+            var $tab = this.$tabs.filter('.' + this.settings.activeClass);
 
             if (!$tab.length) {
                 if (location.hash) {
