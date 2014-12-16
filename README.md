@@ -51,7 +51,7 @@ $('.tabs').tabs({
     // other init options...
     activeClass: 'my-active-class'
 });
-
+```
 
 ### Destroy
 
