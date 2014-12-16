@@ -1,6 +1,6 @@
 {
   "name": "minitabs",
-  "main": "build/minitabs.js",
+  "main": "dist/minitabs.js",
   "version": "0.2.0",
   "homepage": "https://github.com/MiniPlugins/minitabs",
   "authors": [
