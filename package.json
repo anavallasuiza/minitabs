@@ -12,6 +12,9 @@
     "jquery",
     "ui"
   ],
+  "scripts": {
+    "build": "grunt build"
+  },
   "author": [
     "Óscar Otero <oom@oscarotero.com>",
     "Berto Yáñez <berto@ber.to>"
