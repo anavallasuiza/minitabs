@@ -2,7 +2,6 @@
 
 /**
  * minitabs
- * [version 0.2.1]
  */
 
 (function (factory) {
@@ -15,8 +14,9 @@
     var pluginName = "tabs",
     defaults = {
         indexSelector: '> ul a',
-        contentSelector: '> section',
-        activeClass: 'tab-active'
+        contentSelector: '> :not(ul)',
+        activeClass: 'is-active',
+        clickFirst: false
     };
 
     function Plugin (element, options) {
@@ -32,7 +32,7 @@
             this.$element = $(this.element);
 
             this.$tabs = this.$element.find(this.settings.indexSelector);
-            this.$contents = this.$element.find(this.settings.contentSelector).hide();
+            this.$contents = this.$element.find(this.settings.contentSelector);
 
             if(!this.$tabs.length || !this.$tabs.length) {
                 throw new Error('No tabs indexes or content selected. Check your configuration.');
@@ -43,9 +43,19 @@
             this.$tabs.on('click.tabs', function (e, parameters) {
                 var $this = $(this), id = $this.attr('href');
 
-                that.$contents.not(id).hide().trigger('hide.tabs');
-                that.$contents.filter(id).show().trigger('show.tabs');
-                that.$tabs.removeClass(that.settings.activeClass);
+                that.$contents
+                    .not(id)
+                    .removeClass(that.settings.activeClass)
+                    .trigger('hide.tabs');
+
+                that.$contents
+                    .filter(id)
+                    .addClass(that.settings.activeClass)
+                    .trigger('show.tabs');
+
+                that.$tabs
+                    .not($this)
+                    .removeClass(that.settings.activeClass);
 
                 $this.addClass(that.settings.activeClass);
 
@@ -58,14 +68,12 @@
 
             var $tab = this.$tabs.filter('.' + this.settings.activeClass);
 
-            if (!$tab.length) {
-                if (location.hash) {
-                    $tab = this.$tabs.filter('[href=' + location.hash + ']');
-                }
+            if (!$tab.length && location.hash) {
+                $tab = this.$tabs.filter('[href=' + location.hash + ']');
+            }
 
-                if (!$tab || !$tab.length) {
-                    $tab = this.$tabs.first();
-                }
+            if (!$tab.length && this.settings.clickFirst) {
+                $tab = this.$tabs.first();
             }
 
             $tab.trigger('click', true);

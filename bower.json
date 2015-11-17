@@ -1,7 +1,6 @@
 {
   "name": "minitabs",
   "main": "dist/minitabs.js",
-  "version": "0.2.1",
   "homepage": "https://github.com/MiniPlugins/minitabs",
   "authors": [
     "Óscar Otero <oom@oscarotero.com>",
