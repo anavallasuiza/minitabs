@@ -11,7 +11,7 @@
         factory(jQuery);
     }
 }(function($) {
-    var pluginName = 'minitabs',
+    var pluginName = 'tabs',
         defaults = {
             indexSelector: '> ul a',
             contentSelector: '> :not(ul)',
