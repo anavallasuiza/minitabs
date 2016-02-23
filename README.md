@@ -1,5 +1,7 @@
 # minitabs
 
+jQuery super-easy tabs Plugin.
+
 ## Install
 
 Use the code from this repo or: ```bower install minitabs```. This plugin is requirejs compatible.
