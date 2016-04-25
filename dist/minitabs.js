@@ -4,22 +4,22 @@
  * minitabs
  */
 
-(function (factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(['jquery'], factory);
-  } else {
-    factory(jQuery);
-  }
-}(function ($) {
-    var pluginName = "tabs",
-    defaults = {
-        indexSelector: '> ul a',
-        contentSelector: '> :not(ul)',
-        activeClass: 'is-active',
-        clickFirst: false
-    };
+(function(factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else {
+        factory(jQuery);
+    }
+}(function($) {
+    var pluginName = 'tabs',
+        defaults = {
+            indexSelector: '> ul a',
+            contentSelector: '> :not(ul)',
+            activeClass: 'is-active',
+            clickFirst: false
+        };
 
-    function Plugin (element, options) {
+    function Plugin(element, options) {
         this.element = element;
         this.settings = $.extend({}, defaults, options);
 
@@ -27,21 +27,22 @@
     }
 
     Plugin.prototype = {
-        init: function () {
+        init: function() {
 
             this.$element = $(this.element);
 
             this.$tabs = this.$element.find(this.settings.indexSelector);
             this.$contents = this.$element.find(this.settings.contentSelector);
 
-            if(!this.$tabs.length || !this.$tabs.length) {
+            if (!this.$tabs.length || !this.$tabs.length) {
                 throw new Error('No tabs indexes or content selected. Check your configuration.');
             }
 
             var that = this;
 
-            this.$tabs.on('click.tabs', function (e, parameters) {
-                var $this = $(this), id = $this.attr('href');
+            this.$tabs.on('click.tabs', function(e, parameters) {
+                var $this = $(this),
+                    id = $this.attr('href');
 
                 that.$contents
                     .not(id)
@@ -69,7 +70,7 @@
             var $tab = this.$tabs.filter('.' + this.settings.activeClass);
 
             if (!$tab.length && location.hash) {
-                $tab = this.$tabs.filter('[href=' + location.hash + ']');
+                $tab = this.$tabs.filter('[href="' + location.hash + '"]');
             }
 
             if (!$tab.length && this.settings.clickFirst) {
@@ -78,17 +79,17 @@
 
             $tab.trigger('click', true);
         },
-        destroy: function () {
+        destroy: function() {
             this.$tabs.off('.tabs');
             this.$contents.off('.tabs');
         }
     };
 
-    $.fn[pluginName] = function (options) {
+    $.fn[pluginName] = function(options) {
         if ((options === undefined) || (typeof options === 'object')) {
-            return this.each(function () {
-                if (!$.data(this, "plugin_" + pluginName)) {
-                    $.data(this, "plugin_" + pluginName, new Plugin(this, options));
+            return this.each(function() {
+                if (!$.data(this, 'plugin_' + pluginName)) {
+                    $.data(this, 'plugin_' + pluginName, new Plugin(this, options));
                 }
             });
         }
@@ -96,7 +97,7 @@
         if ((typeof options === 'string') && (options[0] !== '_') && (options !== 'init')) {
             var returns, args = arguments;
 
-            this.each(function () {
+            this.each(function() {
                 var instance = $.data(this, 'plugin_' + pluginName);
 
                 if ((instance instanceof Plugin) && (typeof instance[options] === 'function')) {

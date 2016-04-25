@@ -70,7 +70,7 @@
             var $tab = this.$tabs.filter('.' + this.settings.activeClass);
 
             if (!$tab.length && location.hash) {
-                $tab = this.$tabs.filter('[href=' + location.hash + ']');
+                $tab = this.$tabs.filter('[href="' + location.hash + '"]');
             }
 
             if (!$tab.length && this.settings.clickFirst) {

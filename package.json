@@ -1,6 +1,6 @@
 {
   "name": "minitabs",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "jQuery super-easy tabs Plugin",
   "main": "dist/minitabs.js",
   "repository": {
