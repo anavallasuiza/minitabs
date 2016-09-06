@@ -3,8 +3,26 @@
 <head>
     <title>minitabs demo</title>
     <style type="text/css" media="screen">
-        .tab-content {
-            display: none; /* optional */
+        .my-tab-index {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            border-bottom: solid 2px;
+        }
+        .my-tab-index a {
+            display: block;
+            padding: 1em;
+        }
+        .my-tab-index .is-active {
+            background: gray;
+            color: white;
+        }
+        .my-tab-content {
+            display: none;
+        }
+        .my-tab-content.is-active {
+            display: block;
         }
     </style>
 </head>
@@ -54,7 +72,9 @@
     //Init tabs
     $myTabs.tabs({
         indexSelector: '> .my-tab-index a',
-        contentSelector: '> .my-tab-content'
+        contentSelector: '> .my-tab-content',
+        clickFirst: true,
+        index: 1
     });
 </script>
 </body>

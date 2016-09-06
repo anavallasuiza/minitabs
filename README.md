@@ -32,11 +32,13 @@ Use the code from this repo or: ```bower install minitabs```. This plugin is req
 ### Init
 
 #### Default configuration:
+
 ```js
 $('.tabs').tabs();
 ```
 
 #### Custom elements:
+
 ```js
 $('.tabs').tabs({
     indexSelector: '> ul a', // selector for the tabs index
@@ -46,7 +48,17 @@ $('.tabs').tabs({
 this example uses the actual default configuration, change the selectors to suit your needs.
 
 ### Custom active class:
-By default the class __.tab_active__ is applied to the selected tab index element. But you can configure it when you init the tabs:
+
+By default the class `is-active` is applied to the selected tab index element. But you can configure it when you init the tabs:
+
+```css
+.tabs > section {
+    display: none;
+}
+.tabs > section.my-active-class {
+    display: block;
+}
+```
 
 ```js
 $('.tabs').tabs({
@@ -79,8 +91,8 @@ $('#content2').on('hide.tabs', function () {
 });
 ```
 
-Also, the event __click.tabs__ is triggered when the user clicks on any of the __tab index__ elements.
+Also, the event `click.tabs` is triggered when the user clicks on any of the __tab index__ elements.
 
 ### Setting the default tab
 
-Just add the ```.tab-active``` class (or your custom active class, see avobe) to the tab index that you want to show by default.
+Just add the `.tab-active` class (or your custom active class, see above) to the tab index that you want to show by default.
