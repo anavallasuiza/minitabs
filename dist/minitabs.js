@@ -16,7 +16,8 @@
             indexSelector: '> ul a',
             contentSelector: '> :not(ul)',
             activeClass: 'is-active',
-            clickFirst: false
+            clickFirst: false,
+            index: 0
         };
 
     function Plugin(element, options) {
@@ -74,7 +75,7 @@
             }
 
             if (!$tab.length && this.settings.clickFirst) {
-                $tab = this.$tabs.first();
+                $tab = this.$tabs.eq(this.settings.index);
             }
 
             $tab.trigger('click', true);
